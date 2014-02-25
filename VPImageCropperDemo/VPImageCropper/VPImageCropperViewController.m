@@ -101,30 +101,30 @@
 }
 
 - (void)initControlBtn {
-    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50.0f, 100, 50)];
-    cancelBtn.backgroundColor = [UIColor blackColor];
-    cancelBtn.titleLabel.textColor = [UIColor whiteColor];
-    [cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
-    [cancelBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
-    [cancelBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [cancelBtn.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
-    [cancelBtn.titleLabel setNumberOfLines:0];
-    [cancelBtn setTitleEdgeInsets:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
-    [cancelBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:cancelBtn];
+    self.cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50.0f, 100, 50)];
+    self.cancelBtn.backgroundColor = [UIColor blackColor];
+    self.cancelBtn.titleLabel.textColor = [UIColor whiteColor];
+    [self.cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.cancelBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
+    [self.cancelBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.cancelBtn.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    [self.cancelBtn.titleLabel setNumberOfLines:0];
+    [self.cancelBtn setTitleEdgeInsets:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
+    [self.cancelBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.cancelBtn];
     
-    UIButton *confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100.0f, self.view.frame.size.height - 50.0f, 100, 50)];
-    confirmBtn.backgroundColor = [UIColor blackColor];
-    confirmBtn.titleLabel.textColor = [UIColor whiteColor];
-    [confirmBtn setTitle:@"OK" forState:UIControlStateNormal];
-    [confirmBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
-    [confirmBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    confirmBtn.titleLabel.textColor = [UIColor whiteColor];
-    [confirmBtn.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
-    [confirmBtn.titleLabel setNumberOfLines:0];
-    [confirmBtn setTitleEdgeInsets:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
-    [confirmBtn addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:confirmBtn];
+    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100.0f, self.view.frame.size.height - 50.0f, 100, 50)];
+    self.confirmBtn.backgroundColor = [UIColor blackColor];
+    self.confirmBtn.titleLabel.textColor = [UIColor whiteColor];
+    [self.confirmBtn setTitle:@"OK" forState:UIControlStateNormal];
+    [self.confirmBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
+    [self.confirmBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    self.confirmBtn.titleLabel.textColor = [UIColor whiteColor];
+    [self.confirmBtn.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    [self.confirmBtn.titleLabel setNumberOfLines:0];
+    [self.confirmBtn setTitleEdgeInsets:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
+    [self.confirmBtn addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.confirmBtn];
 }
 
 - (void)cancel:(id)sender {
