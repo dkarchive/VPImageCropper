@@ -44,6 +44,9 @@
         self.cropFrame = cropFrame;
         self.limitRatio = limitRatio;
         self.originalImage = [self fixOrientation:originalImage];
+        
+        if (!self.borderColor)
+            self.borderColor = [UIColor yellowColor];
     }
     return self;
 }
@@ -89,7 +92,7 @@
     [self.view addSubview:self.overlayView];
     
     self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
-    self.ratioView.layer.borderColor = [UIColor yellowColor].CGColor;
+    self.ratioView.layer.borderColor = self.borderColor.CGColor;
     self.ratioView.layer.borderWidth = 1.0f;
     self.ratioView.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.ratioView];
