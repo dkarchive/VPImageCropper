@@ -55,7 +55,17 @@
 {
     [super viewDidLoad];
     [self initView];
-    [self initControlBtn];
+    
+    if (self.confirmBtn) {
+        [self.confirmBtn addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.confirmBtn];
+        
+        [self.cancelBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.cancelBtn];
+    }
+    else {
+        [self initControlBtn];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
